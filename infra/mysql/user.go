@@ -65,6 +65,16 @@ func UserGetOne(id int) User {
 	return user
 }
 
+func UserGetOneByAccount(acc string) (User, error) {
+	db, _ := dbConnect()
+	var user User
+	result := db.Where("account = ?", acc).First(&user)
+	if result.Error != nil {
+		return user, fmt.Errorf("The acount is not exist.")
+	}
+	return user, nil
+}
+
 func UserDelete(id int) {
 	db, _ := dbConnect()
 	db.Where("id = ?", id).Delete(&User{})

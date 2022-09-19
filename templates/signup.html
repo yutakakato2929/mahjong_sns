@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Mahjong SNS</h1>
+        </div>
+        <div>
+            <button type=“button” onclick="location.href='/'">Back to Login Page</button>
+        </div>
+    </header>
+    <main>
+        <div>
+            <h2>Sign Up</h2>
+            <p>{{.error}}</p>
+            <form action="/userinsert" method="POST">
+                <dl>
+                    <dt><label for="name">Name:</label></dt>
+                    <dd><input type="text" id="name" placeholder="ex) 石原たいな" name="name" required></dd>
+                    <dt><label for="account">Account Name:</label></dt>
+                    <dd><input type="text" id="account" placeholder="ex) てぼん" name="account" required></dd>
+                    <dt><label for="password">Password:</label></dt>
+                    <dd><input type="password" id="password" placeholder="6文字以上推奨" name="password" required></dd>
+                    <dt><label for="repassword">Retype password:</label></dt>
+                    <dd><input type="password" id="repassword" placeholder="再入力をお願いします" name="repassword" required></dd>
+                    <div><input type="submit" value="Sign Up"></div>
+                </dl>
+            </form>
+        </div>
+    </main>
+    <footer id="footer">
+        <p>&copy; 2022 Yutaka Kato</p>
+    </footer>
+    <!--
+    <div class="users">
+        <ul>
+        {{range.users}}
+        <li>
+            {{.Name}}
+        </li>
+        {{end}}
+        </ul>
+    </div>
+    -->
+</body>
+</html>
