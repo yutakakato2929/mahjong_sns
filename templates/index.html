@@ -12,13 +12,14 @@
             <h1>Mahjong SNS</h1>
         </div>
         <div>
-            <form action="/login" method="POST">
-                <dl>
-                    <dd><input type="text" placeholder="Account Name" name="account" required></dd>
-                    <dd><input type="password" placeholder="Password" name="password" required></dd>
-                </dl>
+            <form action="/signin" method="POST">
+                <ul>
+                    <li><input type="text" placeholder="Account Name" name="account" required></li>
+                    <li><input type="password" placeholder="Password" name="password" required></li>
+                </ul>
                 <div><input type="submit" value="Login"></div>
             </form>
+            <p>{{.error}}</p>
         </div>
     </header>
     <main>

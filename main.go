@@ -13,6 +13,7 @@ func main() {
 	mysql.DbInit()
 
 	router.GET("/", handler.Handlerindex)
+	router.POST("/signin", handler.Handlersignin)
 	router.GET("/signup", handler.Handlersignup)
 	router.POST("/userinsert", handler.Handleruserinsert)
 	router.Run()
